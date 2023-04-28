@@ -1,5 +1,6 @@
 const express = require('express');
 const { PORT } = require('./src/configs/server.config');
+const { connect } = require('mongoose');
 
 const app = express();
 
@@ -11,4 +12,5 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Application is running in PORT: ${PORT}`);
+  connect();
 })
